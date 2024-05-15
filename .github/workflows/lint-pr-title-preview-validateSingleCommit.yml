@@ -1,14 +1,13 @@
-name: 'Release'
+name: 'Lint PR title preview (current branch, validateSingleCommit enabled)'
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
 
 permissions:
-  contents: write
-  deployments: write
-  issues: write
-  pull-requests: write
+  pull-requests: read
 
 jobs:
   main:
@@ -20,6 +19,9 @@ jobs:
           node-version: 20
       - run: yarn install
       - run: yarn build
-      - run: yarn semantic-release
+      - uses: ./
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          validateSingleCommit: true
+          validateSingleCommitMatchesPrTitle: true
