@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/D1vine-devs/semantic/compare/v1.0.0...v1.0.1) (2024-05-15)
+
+
+### Bug Fixes
+
+* fixing elvis mum ([603796d](https://github.com/D1vine-devs/semantic/commit/603796db54c180912483ed20cc8d001d8b2d0b59))
+
 # 1.0.0 (2024-05-15)
 
 
